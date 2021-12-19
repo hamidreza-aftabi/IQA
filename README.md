@@ -10,7 +10,21 @@ The results of the first technique show that removing poor-quality images can ac
 We have used two sets of data in our project to assess the performance of the IQA and adaptable IQA networks in our experiments: 1- PneumoniaMNIST and 2- Echocardiog- raphy. The details of these datasets are discussed in what follows.
 
 ![Mnist Dataset](/Results/mnist_data.png#gh-dark-mode-only)
+
 The PneumoniaMNIST is based on a prior dataset of 5,856 pediatric chest X-Ray images. The task is a binary-class classification of pneumonia against normal. The source training has been split randomly into training and validation set with a ratio of 9 : 1 i. Additionally, we have used its source validation set as the holdout set. The source images are gray-scale, and their sizes are (384 - 2916) × (127 - 2713). The actual data used in our project has been center-cropped and resized into 1 × 36 × 36. Furthermore, some random images of this dataset were artificially corrupted using pepper and salt noises to create poor-quality pictures. Using these images would probably result in low controller scores. 
 
 ![Echo Dataset](/Results/echo_data.png#gh-dark-mode-only)
+
 As the second dataset, we used the Echocardiography dataset, which contains a to- tal number of 17,015 echo studies from 3,157 unique patients. Depending on the echo transducer position (whether parasternal, apical, subcostal, suprasternal) and the orien- tation of the tomographic plane through the heart (long axis, short axis, four-chamber, five-chamber), different echocardiogram views for the heart exist. Our data contains 14 traditional echo views, which define our classes. These images are categorized into four different groups based on their quality; poor, fair, good, and excellent. The whole dataset was labeled in two attempts. In the first attempt, a cardiologist labeled the dataset, and as a separate attempt, two other senior medical students did the labeling procedure two months later, resulting in 3 sets of labels in total. From now on, we refer to the former labeling attempt as expert labeled data and the latter as non-expert labeled data. The defined task is a multiclass classification that predicts the view of each image of the dataset. Each image is a randomly selected frame of a video with a size of 224 × 224. Additionally, the data has been randomly split into training and validation and holdout set with a ratio of 7:2:1. This data is collected from Vancouver General Hospital Picture Archiving and Communication System (PACS) under the approvals from the institutional Medical Research Ethics Board and the Information Privacy Office. 
+
+# Results
+## 1- IQA
+
+![IQA Results](/Results/result1.png#gh-dark-mode-only)
+
+
+## 2- Adaptable IQA
+
+![Adaptable IQA Results](/Results/result2.png#gh-dark-mode-only)
+
+
