@@ -21,10 +21,12 @@ As the second dataset, we used the Echocardiography dataset, which contains a to
 ## 1- IQA
 
 ![IQA Results](/Results/result1.png#gh-dark-mode-only)
+
 In the IQA algorithm, the task performance peaked before decreasing as more samples were discarded. This observation indicates although the presented IQA algorithm is effective, there is a trade- off between rejecting images with poor quality and classification accuracy.
 
 ## 2- Adaptable IQA
 
 ![Adaptable IQA Results](/Results/result2.png#gh-dark-mode-only)
+
 The utilized adaptation strategy in the IQA algorithm allows for the IQA agent and task predictor to be adapted using as few as 30% of expert labeled Echocardiography data.
 
