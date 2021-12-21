@@ -1,7 +1,7 @@
 # Image Quality Assesment Using Reinforcment Learning
 
 The quality of medical images can strongly influence the clinician’s to perceive the appropriate diagnostic features. However, the definition of quality may differ considering the task performed on each image. To deal with this issue, we have implemented two image quality assessment (IQA) techniques in this project. In the first algorithm, we train an agent using reinforcement learning to determine the image quality based on how amenable it is for a defined task without having quality labels that are manually defined by humans. In this method, the training set is used to optimize the defined task predictor network. At the same time, the agent tries to maximize its accumulated reward by achieving a higher performance on the controller-selected validation set. In the second algorithm, we use meta reinforcement learning (meta-RL) to increase the adaptability of both the IQA agent and the task predictor so that they are less dependent on high-quality, expert-labeled training data. We have used PPO and DDPG algorithms for training the controller network.
-The results of the first technique show that removing poor-quality images can achieve 85.71% and 90.82% classification accuracies for PneumoniaMNIST and Echocar- diography datasets, respectively, which are higher than the baseline accuracy. More- over, the utilized adaptation strategy in the IQA algorithm allows for the IQA agent and task predictor to be adapted using as few as 30% of expert labeled Echocar- diography data, which drastically reduces the need for expensive expert labeled data.
+The results of the first technique show that removing poor-quality images can achieve 85.71% and 90.82% classification accuracies for PneumoniaMNIST and Echocar- diography datasets, respectively, which are higher than the baseline accuracy. Moreover, the utilized adaptation strategy in the IQA algorithm allows for the IQA agent and task predictor to be adapted using as few as 30% of expert labeled Echocardiography data, which drastically reduces the need for expensive expert labeled data.
 
 ![Overview of the IQA](/Results/overview1.png#gh-dark-mode-only)
 ![Overview of the Adaptable IQA](/Results/overview2.png#gh-dark-mode-only)
@@ -22,11 +22,11 @@ As the second dataset, we used the Echocardiography dataset, which contains a to
 
 ![IQA Results](/Results/result1.png#gh-dark-mode-only)
 
-In the IQA algorithm, the task performance peaked before decreasing as more samples were discarded. This observation indicates although the presented IQA algorithm is effective, there is a trade- off between rejecting images with poor quality and classification accuracy.
+The results of the experiment on the holdout data are depicted in the figure above. As it is evident, by increasing the rejection ratio, which defines the rejected portion of images with the lowest controller scores,  the classification accuracy increased for both PPO and DDPG algorithms compared to the baseline. Maximum classification accuracies for PneumoniaMNIST/Echocardiography using PPO and DDPG algorithms are 85.71%/90.82% and 85.1%/90.15%, respectively. Here the baseline accuracy is  83.3%/88.13%. These figures also indicate that the PPO algorithm has achieved better classification accuracy and cumulative reward compared to the DDPG algorithm. In the IQA algorithm, the task performance peaked before decreasing as more samples were discarded. This observation indicates although the presented IQA algorithm is effective, there is a trade-off between rejecting images with poor quality and classification accuracy.
 
 ## 2- Adaptable IQA
 
 ![Adaptable IQA Results](/Results/result2.png#gh-dark-mode-only)
 
-The utilized adaptation strategy in the IQA algorithm allows for the IQA agent and task predictor to be adapted using as few as 30% of expert labeled Echocardiography data.
+This figure shows the result of performing the adaptable IQA algorithm on the holdout set of Echocaridgraphy data. We evaluated the models for varying k-values, where k is the ratio of expert-labeled samples used for adaptation (k * 100% samples used). The utilized adaptation strategy in the IQA algorithm allows for the IQA agent and task predictor to be adapted using as few as 30% of expert labeled Echocardiography data. The baseline is the accuracy of the classifier trained with expert labeled data. This figure also shows images with high controller score (selected image) and low controller score.
 
