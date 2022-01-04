@@ -26,7 +26,7 @@ The results of the experiment on the holdout data are depicted in the figure abo
 
 ## 2- Adaptable IQA
 
-![Adaptable IQA Results](/Results/result2.png#gh-dark-mode-only)
+![Adaptable IQA Results](/Results/result2.png)
 
 This figure shows the result of performing the adaptable IQA algorithm on the holdout set of Echocaridgraphy data. We evaluated the models for varying k-values, where k is the ratio of expert-labeled samples used for adaptation (k * 100% samples used). The utilized adaptation strategy in the IQA algorithm allows for the IQA agent and task predictor to be adapted using as few as 30% of expert labeled Echocardiography data. The baseline is the accuracy of the classifier trained with expert labeled data. This figure also shows images with high controller score (selected image) and low controller score.
 
