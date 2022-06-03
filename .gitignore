@@ -16,5 +16,7 @@ run-*
 train-*
 *.npy
 *.off
-**/.DS_Store
+
+.DS_Store
+.DS_Store?
 
